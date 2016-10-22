@@ -1,2 +1,3 @@
 name: agentreno
 markdown: kramdown
+highlighter: rouge
