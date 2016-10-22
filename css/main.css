@@ -1,43 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro:700');
+
 body {
-    margin: 60px auto;
-    width: 70%;
+    font-family: "Anonymous Pro";
+    color: white;
+    background-color: black;
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/402044/bright-squares.png');
 }
-nav ul, footer ul {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    padding: 0px;
+
+#header, #menu, #imagestripe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#header > * {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+}
+
+.nav a {
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+#avatar {
+    height: 50px;
+}
+
+#imagestripe {
+    margin: 0 auto;
+    width: 80%;
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/402045/faded-code.png');
+}
+
+#overlay-text {
+    background-color: rgba(1,1,1,0.5);
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+ul {
     list-style: none;
-    font-weight: bold;
 }
-nav ul li, footer ul li {
-    display: inline;
-    margin-right: 20px;
-}
+
 a {
     text-decoration: none;
-    color: #999;
 }
+
 a:hover {
     text-decoration: underline;
-}
-h1 {
-    font-size: 3em;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-}
-p {
-    font-size: 1.5em;
-    line-height: 1.4em;
-    color: #333;
-}
-footer {
-    border-top: 1px solid #d5d5d5;
-    font-size: .8em;
-}
-
-ul.posts { 
-    margin: 20px auto 40px; 
-    font-size: 1.5em;
-}
-
-ul.posts li {
-    list-style: none;
 }

@@ -6,21 +6,21 @@
         <link rel="stylesheet" type="text/css" href="/css/main.css">
     </head>
     <body>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/blog">Blog</a></li>
-            </ul>
-        </nav>
-        <div class="container">
+        <div id="header">
+            <img id="avatar" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/402044/avatar.png" />
+            <h1>agentreno</h1>
+        </div>
+        <div id="menu">
+            <nav class="nav">
+                <a href="/">About</a>
+                <a href="/blog">Blog</a>
+            </nav>
+        </div>
         
         {{ content }}
         
-        </div><!-- /.container -->
         <footer>
-            <ul>
-                <li><a href="https://github.com/agentreno">github.com/agentreno</a></li>
-            </ul>
+            <li><a href="https://github.com/agentreno">github.com/agentreno</a></li>
         </footer>
     </body>
 </html>
