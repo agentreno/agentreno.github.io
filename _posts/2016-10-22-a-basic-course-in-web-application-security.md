@@ -17,7 +17,7 @@ knowledge that cross-site scripting attacks are about injecting scripts
 into an app. Then there's the understanding you get from finding XSS in code, 
 taking advantage of it, fixing it and adding monitoring for it.
 
-Feel free to [clone the repository](https://github.com/agentreno/aas-demo) and 
-try it out. If you have any suggestions for improving it, just open an issue 
-or make a pull request. Also, if you're finding it tough or just want to check 
-your answers, there's a branch called `secured` with commented fixes.
+Feel free to [*clone the repository*](https://github.com/agentreno/aas-demo)
+and try it out. If you have any suggestions for improving it, just open an
+issue or make a pull request. Also, if you're finding it tough or just want to
+check your answers, there's a branch called `secured` with commented fixes.
