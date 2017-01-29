@@ -12,7 +12,7 @@ method.
 
 *index.html*
 
-```javascript
+{% highlight javascript %}
 ...
 <div id="target"></div>
 <script>
@@ -22,7 +22,7 @@ var showMessage = function () {
 };
 </script>
 ...
-```
+{% endhighlight %}
 
 | Pros | Cons |
 | ---- | ---- |
