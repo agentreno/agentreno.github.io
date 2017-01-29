@@ -12,7 +12,7 @@ method.
 
 *index.html*
 
-```
+```javascript
 ...
 <div id="target"></div>
 <script>
