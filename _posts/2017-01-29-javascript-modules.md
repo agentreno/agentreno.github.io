@@ -4,14 +4,14 @@ title: "Javascript Modules"
 date: 2017-01-29
 ---
 
-## Javascript Modules
-
 This is an attempt to describe the various methods of creating modules in
 Javascript. I have attempted to sum up the advantages and disadvantages of each
 method.
 
 ### Method #1: No Module, Script Tag
+
 *index.html*
+
 ```
 ...
 <div id="target"></div>
@@ -23,8 +23,6 @@ var showMessage = function () {
 </script>
 ...
 ```
-
-
 
 | Pros | Cons |
 | ---- | ---- |
