@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    font-family: "Anonymous Pro";
+    font-family: Arial;
 }
 
 #header, #menu, #imagestripe {
@@ -16,11 +16,13 @@ body {
 #header {
     background-color: #333;
     color: white;
+    font-family: "Anonymous Pro";
 }
 
 #menu {
     background-color: #333;
     color: white;
+    font-family: "Anonymous Pro";
 }
 
 #header > * {
@@ -75,11 +77,13 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     border: 1px solid black;
+    table-layout: fixed;
 }
 
 td {
     border: 1px solid black;
     padding: 10px;
+    width: 50%;
 }
 
 th {
