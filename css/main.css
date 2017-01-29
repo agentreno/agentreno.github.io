@@ -61,7 +61,7 @@ body {
     padding: 20px;
 }
 
-ul {
+ul.posts {
     list-style: none;
 }
 
