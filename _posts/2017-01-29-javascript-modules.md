@@ -32,7 +32,9 @@ var showMessage = function () {
 | | All variables are global (usually on `window`) and may conflict with other code
 
 ### Method #2: No Module, Separate File
+
 *index.html*
+
 ```
 ...
 <div id="target"></div>
@@ -42,12 +44,15 @@ var showMessage = function () {
 </script>
 ...
 ```
+
 *main.js*
+
 ```
 var showMessage = function (target, message) {
 	target.innerHTML = message;
 };
 ```
+
 | Pros | Cons |
 | ---- | ---- |
 | Quick and easy | Still sets global variables with potential for conflict |
@@ -55,7 +60,9 @@ var showMessage = function (target, message) {
 | `main.js` can be versioned and maintained in one place | |
 
 ### Method #3: Module Pattern, Global Import
+
 *index.html*
+
 ```
 ...
 <div id="target"></div>
@@ -65,7 +72,9 @@ var showMessage = function (target, message) {
 </script>
 ...
 ```
+
 *messagesLib.js*
+
 ```
 var messagesLib = (function (root) {
 	var private_var = 'private';
@@ -74,6 +83,7 @@ var messagesLib = (function (root) {
 	};
 })(messagesLib || {});
 ```
+
 | Pros | Cons |
 | ---- | ---- |
 | Variables declared inside the IIFE aren't defined as global variables. | Augmentation of `messagesLib` can happen in any order, but load ordering still matters for dependencies. |
@@ -82,14 +92,18 @@ var messagesLib = (function (root) {
 | Load order doesn't matter, existing `messagesLib` will be used or created if it doesn't exist yet. |
 
 ### Method #4: CommonJS Module
+
 CommonJS modules are a format used extensively in Node and work through `require` and `module.exports`.  Most applications use AMD (see next method). To use it in the browser requires a browser implementation of `require` such as [require1k](http://stuk.github.io/require1k/) or [browserify](http://browserify.org/) (which is also a bundler).
 
 *index.html*
+
 ```
 <div id="target"></div>
 <script src="require1k.js" data-main="./main"></script>
 ```
+
 *messagesLib.js*
+
 ```
 module.exports = {
 	showMessage: function (target, message) {
@@ -97,7 +111,9 @@ module.exports = {
 	}
 }
 ```
+
 *main.js*
+
 ```
 var messagesLib = require('./messagesLib');
 messagesLib.showMessage(document.getElementById('target'), 'hello');
@@ -115,20 +131,26 @@ https://plnkr.co/edit/GVog8WrV1FGXnx3bBd0g
 
 
 ### Method #5: AMD (asynchronous module definition)
+
 RequireJS is probably the most popular implementation of AMD.
 
 *index.html*
+
 ```
 <div id="target></div>
 <script src="require.js" data-main="main.js"></script>
 ```
+
 *main.js*
+
 ```
 define(['messageLib'], function(messageLib){
   messageLib.showMessage(document.getElementById('target'));
 });
 ```
+
 *messageLib.js*
+
 ```
 define(['hello'], function(hello) {
   return {
@@ -138,12 +160,15 @@ define(['hello'], function(hello) {
   }
 });
 ```
+
 *hello.js*
+
 ```
 define([], function () {
   return 'hello';
 });
 ```
+
 https://plnkr.co/edit/vBbZiGOSEksPG0EbkxdP
 
 | Pros | Cons |
@@ -153,6 +178,7 @@ https://plnkr.co/edit/vBbZiGOSEksPG0EbkxdP
 | | Though it doesn't block, dynamic loading of each dependency when required doesn't take advantage of bundling and can be slow. |
 
 ### Method #6: UMD (universal module definition)
+
 This is an attempt to write modules in a way that will work whether it is loaded via AMD, CommonJS or plain script tags and window globals. This also helped modules work in the browser and on the server.
 
 *index.html*
@@ -160,7 +186,9 @@ This is an attempt to write modules in a way that will work whether it is loaded
 <!-- Load module using AMD, CommonJS or plain script tags, up to you! -->
 ...
 ```
+
 *messageLib.js*
+
 ```
 (function (root, factory) {
 	if (typeof define === 'function' && define.amd) {
@@ -191,21 +219,27 @@ This is an attempt to write modules in a way that will work whether it is loaded
 ### Method #7: ES6 import/export
 
 *index.html*
+
 ```
 <div id="target"></div>
 <script src="main.js"></script>
 ```
+
 *main.js*
+
 ```
 import * as messagesLib from 'messagesLib';
 messagesLib.showMessage(document.getElementById('target'));
 ```
+
 *messagesLib.js*
+
 ```
 export function showMessage(target) {
 	target.innerHTML = 'hello';
 }
 ```
+
 | Pros | Cons |
 | ---- | ---- |
 | Native language support for modules. | This feature seems to be so cutting edge that it's not supported in any modern browser yet. You will need to use a transpiler like Babel. |
@@ -216,9 +250,11 @@ export function showMessage(target) {
 - Webpack could also enable multiple bundles for different parts of the application, loading only part of the application initially. When code is likely to be required (e.g. a route is visited), another bundle can be loaded. This isn't quite the same as loading code when it's immediately required (could be a performance issue) since the bundle for a route could contain all of the code likely to be used in that part of the application.
 
 ### Notes
+
 - The separate problems of module definition, dependency management and module loading became a little blurred together in this article. 
 
 ### References
+
 - I was inspired to write this as an expanded version of this excellent article on Javascript modules: https://medium.freecodecamp.com/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#.6d69hogly
 - There are many variations on the Javascript module patern, this article explains some of them well: http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html
 - Require1k seems to have been built as a fun hack but it's one of the only pure CommonJS in the browser implementations I could find that doesn't pre-process the require statements and bundle from them like Browserify: http://stuk.github.io/require1k/
