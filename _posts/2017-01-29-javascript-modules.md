@@ -169,7 +169,7 @@ define([], function () {
 });
 ```
 
-https://plnkr.co/edit/vBbZiGOSEksPG0EbkxdP
+[https://plnkr.co/edit/vBbZiGOSEksPG0EbkxdP](https://plnkr.co/edit/vBbZiGOSEksPG0EbkxdP)
 
 | Pros | Cons |
 | ---- | ---- |
@@ -182,6 +182,7 @@ https://plnkr.co/edit/vBbZiGOSEksPG0EbkxdP
 This is an attempt to write modules in a way that will work whether it is loaded via AMD, CommonJS or plain script tags and window globals. This also helped modules work in the browser and on the server.
 
 *index.html*
+
 ```
 <!-- Load module using AMD, CommonJS or plain script tags, up to you! -->
 ...
