@@ -119,7 +119,7 @@ var messagesLib = require('./messagesLib');
 messagesLib.showMessage(document.getElementById('target'), 'hello');
 ```
 
-https://plnkr.co/edit/GVog8WrV1FGXnx3bBd0g
+[https://plnkr.co/edit/GVog8WrV1FGXnx3bBd0g](https://plnkr.co/edit/GVog8WrV1FGXnx3bBd0g)
 
 | Pros | Cons |
 | ---- | ---- |
