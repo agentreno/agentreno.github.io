@@ -78,6 +78,8 @@ table {
     border-spacing: 0;
     border: 1px solid black;
     table-layout: fixed;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 td {
