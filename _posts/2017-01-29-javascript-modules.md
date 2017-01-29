@@ -246,7 +246,9 @@ export function showMessage(target) {
 | You can selectively import parts of the module and alias them. | The same module loading problems as before apply. This isn't a module definition problem though.|
 
 - A popular combination of module loading / definition methods is now ES6 import/export syntax, Babel for transpilation of this syntax, and Webpack for running Babel and bundling Javascript files together. Angular 2 uses this build process in it's guides and tutorials, while also using Babel to transpile Typescript down to ES5 Javascript.
+
 - Webpack enables other interesting possibilities, like treating CSS as an application dependency, and creating separate bundles for vendor and application code for different caching policies.
+
 - Webpack could also enable multiple bundles for different parts of the application, loading only part of the application initially. When code is likely to be required (e.g. a route is visited), another bundle can be loaded. This isn't quite the same as loading code when it's immediately required (could be a performance issue) since the bundle for a route could contain all of the code likely to be used in that part of the application.
 
 ### Notes
@@ -256,5 +258,7 @@ export function showMessage(target) {
 ### References
 
 - I was inspired to write this as an expanded version of this excellent article on Javascript modules: https://medium.freecodecamp.com/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#.6d69hogly
+
 - There are many variations on the Javascript module patern, this article explains some of them well: http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html
+
 - Require1k seems to have been built as a fun hack but it's one of the only pure CommonJS in the browser implementations I could find that doesn't pre-process the require statements and bundle from them like Browserify: http://stuk.github.io/require1k/
