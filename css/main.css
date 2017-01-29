@@ -1,18 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Anonymous+Pro:700');
 
 body {
+    margin: 0;
     font-family: "Anonymous Pro";
-    color: white;
-    background-color: black;
-    background-image: url('/images/bright-squares.png');
 }
 
 #header, #menu, #imagestripe {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#header {
+    background-color: #333;
+    color: white;
+}
+
+#menu {
+    background-color: #333;
+    color: white;
 }
 
 #header > * {
@@ -27,6 +35,7 @@ body {
 }
 
 .nav a {
+    color: white;
     text-align: center;
     margin-left: 10px;
     margin-right: 10px;
@@ -40,11 +49,9 @@ body {
 #imagestripe {
     margin: 0 auto;
     width: 80%;
-    background-image: url('/images/faded-code.png');
 }
 
 #overlay-text {
-    background-color: rgba(1,1,1,0.5);
     width: 80%;
     margin: 0 auto;
     margin-top: 30px;
@@ -57,7 +64,6 @@ ul {
 }
 
 a {
-    color: white;
     text-decoration: none;
 }
 
