@@ -18,7 +18,7 @@ method.
 <script>
 var message = 'hello';
 var showMessage = function () {
-	document.getElementById('target').innerHTML = message;
+   document.getElementById('target').innerHTML = message;
 };
 </script>
 ...
@@ -40,7 +40,7 @@ var showMessage = function () {
 <div id="target"></div>
 <script src="main.js"></script>
 <script>
-	showMessage(document.getElementById('target'), 'hello');
+   showMessage(document.getElementById('target'), 'hello');
 </script>
 ...
 ```
@@ -49,7 +49,7 @@ var showMessage = function () {
 
 ```
 var showMessage = function (target, message) {
-	target.innerHTML = message;
+   target.innerHTML = message;
 };
 ```
 
@@ -68,7 +68,7 @@ var showMessage = function (target, message) {
 <div id="target"></div>
 <script src="messagesLib.js"></script>
 <script>
-	messagesLib.showMessage(document.getElementById('target'), 'hello');
+   messagesLib.showMessage(document.getElementById('target'), 'hello');
 </script>
 ...
 ```
@@ -77,10 +77,10 @@ var showMessage = function (target, message) {
 
 ```
 var messagesLib = (function (root) {
-	var private_var = 'private';
-	root.showMessage = function (target, message) {
-		target.innerHTML = message;
-	};
+   var private_var = 'private';
+   root.showMessage = function (target, message) {
+      target.innerHTML = message;
+   };
 })(messagesLib || {});
 ```
 
@@ -106,9 +106,9 @@ CommonJS modules are a format used extensively in Node and work through `require
 
 ```
 module.exports = {
-	showMessage: function (target, message) {
-		target.innerHTML = message;
-	}
+   showMessage: function (target, message) {
+      target.innerHTML = message;
+   }
 }
 ```
 
@@ -191,23 +191,23 @@ This is an attempt to write modules in a way that will work whether it is loaded
 
 ```
 (function (root, factory) {
-	if (typeof define === 'function' && define.amd) {
-		// AMD
-		define(['hello'], factory);
-	} else if (typeof exports === 'object') {
-		// CommonJS
-		module.exports = factory(require('hello'));
-	} else {
-		// Browser globals
-		root.messageLib = factory(root.hello);
-	}
+   if (typeof define === 'function' && define.amd) {
+      // AMD
+      define(['hello'], factory);
+   } else if (typeof exports === 'object') {
+      // CommonJS
+      module.exports = factory(require('hello'));
+   } else {
+      // Browser globals
+      root.messageLib = factory(root.hello);
+   }
 }(this, function (hello) {
-	var private_var = 'private';
-	return {
-		showMessage: function(target) {
-			target.innerHTML = hello;
-		}
-	};
+   var private_var = 'private';
+   return {
+      showMessage: function(target) {
+         target.innerHTML = hello;
+      }
+   };
 });
 ```
 
@@ -236,7 +236,7 @@ messagesLib.showMessage(document.getElementById('target'));
 
 ```
 export function showMessage(target) {
-	target.innerHTML = 'hello';
+   target.innerHTML = 'hello';
 }
 ```
 
