@@ -119,7 +119,7 @@ var messagesLib = require('./messagesLib');
 messagesLib.showMessage(document.getElementById('target'), 'hello');
 ```
 
-[https://plnkr.co/edit/GVog8WrV1FGXnx3bBd0g](https://plnkr.co/edit/GVog8WrV1FGXnx3bBd0g)
+[See a Plunker of this pattern in action](https://plnkr.co/edit/GVog8WrV1FGXnx3bBd0g)
 
 | Pros | Cons |
 | ---- | ---- |
@@ -169,7 +169,7 @@ define([], function () {
 });
 ```
 
-[https://plnkr.co/edit/vBbZiGOSEksPG0EbkxdP](https://plnkr.co/edit/vBbZiGOSEksPG0EbkxdP)
+[See a Plunker of this pattern in action](https://plnkr.co/edit/vBbZiGOSEksPG0EbkxdP)
 
 | Pros | Cons |
 | ---- | ---- |
@@ -258,8 +258,8 @@ export function showMessage(target) {
 
 ### References
 
-- I was inspired to write this as an expanded version of this excellent article on Javascript modules: https://medium.freecodecamp.com/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#.6d69hogly
+- I was inspired to write this as an expanded version of [this excellent article on Javascript modules](https://medium.freecodecamp.com/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#.6d69hogly)
 
-- There are many variations on the Javascript module patern, this article explains some of them well: http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html
+- There are many variations on the Javascript module patern, [this article explains some of them well](http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html)
 
-- Require1k seems to have been built as a fun hack but it's one of the only pure CommonJS in the browser implementations I could find that doesn't pre-process the require statements and bundle from them like Browserify: http://stuk.github.io/require1k/
+- [Require1k](http://stuk.github.io/require1k/) seems to have been built as a fun hack but it's one of the only pure CommonJS in the browser implementations I could find that doesn't pre-process the require statements and bundle from them like Browserify.
